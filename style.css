@@ -1,0 +1,24 @@
+* {
+    margin:30;
+    padding:0;
+    box-sizing: border-box;
+}
+
+.container {
+    padding: 10px;
+}
+
+.topDisplay p {
+float:right;    
+}
+
+.startingPage h1, p {
+ text-align: center;
+ justify-content: center;
+}
+
+.startingPage button {
+    margin: auto;
+    display: block;
+    padding: 10px;
+}
