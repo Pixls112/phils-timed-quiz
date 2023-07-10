@@ -1,4 +1,6 @@
-var startButn = document.querySelector("#startBtn");
+var starterBtn = document.querySelector("#startBtn");
+var starterPage = document.querySelector("#starter-page");
+var questionPage = document.querySelector("#question-page")
 
 var questions = [
     {
@@ -27,3 +29,16 @@ var questions = [
         answer: "Values"
     },
 ]
+
+
+starterBtn.addEventListener("click", startGame)
+
+function startGame() {
+    starterPage.classList.add("hidePage")
+    questionPage.classList.remove("hidePage")
+    console.log('Start')
+
+}
+
+  
+

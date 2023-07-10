@@ -9,19 +9,29 @@
   </head>
 
   <body>
-    <div class = "container">
+    <section class = "container">
 
-        <div class = "topDisplay">
+        <header class ="topDisplay">
             <button>View Highscores</button>
             <p>Timer: 00:00</p>
-        </div>
+        </header>
 
-         <div id = "startPage" class = startingPage>
+         <div id="starter-page" class="startingPage">
             <h1>Phil's Coding Quiz Challenge</h1> 
             <p>Try to answer the following questions within the time limit! Keep in mind that incorrect answers will reduce  the timer by 5 seconds!</p>
             <button id="startBtn">Begin Quiz</button>
         </div> 
 
-    </div>
+        <div id="question-page" class="questions hidePage">
+            <h2 class="question">Question</h2>
+            <button class="Answer1">Answer1</button>
+            <button class="Answer2">Answer2</button>
+            <button class="Answer3">Answer3</button>
+            <button class="Answer4">Answer4</button>
+          </div>
 
+        </section>
+    
+    <script src="./script.js"></script>
+    
   </body>
