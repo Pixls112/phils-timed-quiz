@@ -38,6 +38,16 @@ float:right;
  .questions.hidePage {
     display: none;
  }
+ 
+ .theEnd{
+    display: block;
+    text-align: center;
+    justify-content: center;
+ }
+
+ .theEnd.hidePage {
+    display: none;
+ }
 
 .question {
     text-align: center;
