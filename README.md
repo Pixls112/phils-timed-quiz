@@ -14,7 +14,7 @@ The main usage of this project was to show my ability to create something from t
 ## Screenshot
 
 The following image shows the web application's appearance and functionality:
-
+![Image Screenshot](https://github.com/Pixls112/phils-timed-quiz/assets/135586632/79fdb1d7-ce6c-4457-81a3-f87ab8bbd1bc)
 
 ## Credit
 
@@ -33,7 +33,7 @@ https://github.com/Pixls112/phils-timed-quiz
 
 ## Launched Website
 
-
+https://pixls112.github.io/phils-timed-quiz/
 
 ## License
 
