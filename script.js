@@ -7,6 +7,10 @@ var currentIndex = 0;
 var timerCount = document.querySelector("#timer-gauge")
 var countDown = 60;
 var endingPage = document.querySelector("#end-page")
+var userScore = document.querySelector("#score")
+var score = 0;
+var scoreBtn = document.querySelector("#highscoreBtn")
+var scorePage = document.querySelector(".highscore")
 
 var questions = [
     {
@@ -36,6 +40,7 @@ var questions = [
     }   
 ]
 
+scoreBtn.addEventListener("click", scorepage)
 
 starterBtn.addEventListener("click", startGame)
 
@@ -45,9 +50,13 @@ function startGame() {
     nextQuestions()
     console.log('Start')
     setTime()
-
+    userScore.innerText = "Score: " + score;
 }
 
+function scorepage() {
+    starterPage.classList.add("hidePage")
+    scorePage.classList.remove("hidePage")
+}
 
 function nextQuestions() {
     sampleQuestions.innerText = questions[currentIndex].question
@@ -60,6 +69,8 @@ function nextQuestions() {
         button.addEventListener("click", function(){
             if (button.innerText === questions[currentIndex].correct){
                 proceedQuestion()
+                score++;
+                userScore.innerText = "Score: " + score;
             } else {
                 countDown=countDown-5
                 alert("Wrong\nTime deducted")
@@ -75,7 +86,6 @@ function proceedQuestion() {
     currentIndex++;
     sampleQuestions.innerText = questions[currentIndex].question
     var question = questions[currentIndex]
-    
     question.answers.forEach(answer => {
     var button = document.createElement("button")
     button.innerText = answer.text
@@ -83,6 +93,8 @@ function proceedQuestion() {
     answerBtn.appendChild(button)
     button.addEventListener("click", function(){
         if (button.innerText === questions[currentIndex].correct){
+            score++;
+            userScore.innerText = "Score: " + score;
             proceedQuestion2()
         } else {
             countDown=countDown-5
@@ -97,7 +109,6 @@ function proceedQuestion2() {
     currentIndex++;
     sampleQuestions.innerText = questions[currentIndex].question 
     var question = questions[currentIndex]
-    
     question.answers.forEach(answer => {
     var button = document.createElement("button")
     button.innerText = answer.text
@@ -105,6 +116,8 @@ function proceedQuestion2() {
     answerBtn.appendChild(button)
     button.addEventListener("click", function(){
         if (button.innerText === questions[currentIndex].correct){
+            score++;
+            userScore.innerText = "Score: " + score;
             proceedQuestion3()
         } else {
             countDown=countDown-5
@@ -119,7 +132,6 @@ function proceedQuestion3() {
     currentIndex++;
     sampleQuestions.innerText = questions[currentIndex].question 
     var question = questions[currentIndex]
-    
     question.answers.forEach(answer => {
     var button = document.createElement("button")
     button.innerText = answer.text
@@ -127,6 +139,8 @@ function proceedQuestion3() {
     answerBtn.appendChild(button)
     button.addEventListener("click", function(){
         if (button.innerText === questions[currentIndex].correct){
+            score++;
+            userScore.innerText = "Score: " + score;
             proceedQuestion4()
         } else {
             countDown=countDown-5
@@ -141,7 +155,6 @@ function proceedQuestion4() {
     currentIndex++;
     sampleQuestions.innerText = questions[currentIndex].question 
     var question = questions[currentIndex]
-    
     question.answers.forEach(answer => {
     var button = document.createElement("button")
     button.innerText = answer.text
@@ -149,6 +162,8 @@ function proceedQuestion4() {
     answerBtn.appendChild(button)
     button.addEventListener("click", function(){
         if (button.innerText === questions[currentIndex].correct){
+            score++;
+            userScore.innerText = "Score: " + score;
             proceedQuestionFinal()
         } else {
             countDown=countDown-5
@@ -190,3 +205,4 @@ function setTime() {
 
     },1000)
 }
+
