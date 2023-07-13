@@ -6,7 +6,34 @@
 
 .container {
     padding: 10px;
+    display: block;
+    background-color:	#FFFFE0;
+    border: 1px solid #eceff1;
+    border-radius: 8px;
+    box-shadow: rgba(60, 64, 67, 2) 0 1px 2px 0,
+      rgba(60, 64, 67, 0.15) 0 2px 4px 3px;
+    margin: 60px auto;
+    padding: 20px;
+    width: 80vw;
 }
+
+button {
+   width: 15%;
+   margin: 10px;
+   font-size: 200%;
+   color: #13293d;
+   background-color: #fff;
+   border: 5px solid #13293d;
+   border-radius: 30px;
+}
+
+button:hover{
+   background-color: black;
+   color: white;
+   cursor: pointer;
+   transform: scale(1.03);
+   transition: all 1s ease;
+ }
 
 .topDisplay p {
 float:right;    
@@ -71,3 +98,17 @@ float:right;
   .highscore.hidePage {
    display: none;
   }
+
+  .card {
+   background-color: #fff;
+   border: 1px solid #eceff1;
+   border-radius: 8px;
+   box-shadow: rgba(60, 64, 67, 0.3) 0 1px 2px 0,
+     rgba(60, 64, 67, 0.15) 0 1px 3px 1px;
+   margin: 2%;
+   margin-top: 80px;
+   padding: 20px;
+   width: 46%;
+   float: center;
+ }
+

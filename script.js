@@ -11,6 +11,12 @@ var userScore = document.querySelector("#score")
 var score = 0;
 var scoreBtn = document.querySelector("#highscoreBtn")
 var scorePage = document.querySelector(".highscore")
+var initialS = []
+var finalScore = []
+var recentScore = document.querySelector(".recentScores")
+var refreshBtn = document.querySelector("#refresh-button")
+var recentScore2 = document.querySelector(".recentScores2")
+
 
 var questions = [
     {
@@ -40,6 +46,8 @@ var questions = [
     }   
 ]
 
+refreshBtn.addEventListener("click", refreshPage)
+
 scoreBtn.addEventListener("click", scorepage)
 
 starterBtn.addEventListener("click", startGame)
@@ -47,8 +55,10 @@ starterBtn.addEventListener("click", startGame)
 function startGame() {
     starterPage.classList.add("hidePage")
     questionPage.classList.remove("hidePage")
+    initialS = prompt("Enter your initials")
+    
+    console.log(initialS)
     nextQuestions()
-    console.log('Start')
     setTime()
     userScore.innerText = "Score: " + score;
 }
@@ -56,6 +66,9 @@ function startGame() {
 function scorepage() {
     starterPage.classList.add("hidePage")
     scorePage.classList.remove("hidePage")
+    endingPage.classList.add("hidePage")
+    recentScore.innerText = localStorage.getItem("final-score")
+
 }
 
 function nextQuestions() {
@@ -173,7 +186,11 @@ function proceedQuestion4() {
 })
 }
 
+
 function proceedQuestionFinal() {
+    finalScore = initialS + " : " + score
+    console.log(finalScore)
+    localStorage.setItem("final-score", finalScore)
     endPage()
 }
 
@@ -181,6 +198,8 @@ function proceedQuestionFinal() {
 function endPage() {
     endingPage.classList.remove("hidePage")
     questionPage.classList.add("hidePage")
+    recentScore2.innerText = localStorage.getItem("final-score")
+    timeReset()
 }
 
 function resetState() {
@@ -189,6 +208,10 @@ function resetState() {
             answerBtn.firstChild
         )
     }
+}
+
+function refreshPage() {
+    window.location.reload()
 }
 
 function setTime() {
@@ -201,8 +224,9 @@ function setTime() {
             clearInterval(timerInterval)
             endPage()
         }
-        
-
     },1000)
 }
 
+function timeReset(){
+    countDown=1
+}
